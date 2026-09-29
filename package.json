@@ -1,0 +1,15 @@
+{
+  "name": "mark-van-dis-fotografie",
+  "version": "1.0.0",
+  "description": "Website Mark van Dis Fotografie",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -e \"console.log('Static site build complete')\""
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^10.0.12"
+  }
+}
