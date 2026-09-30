@@ -1,0 +1,8 @@
+{
+  "name": "Mark van Dis Fotografie",
+  "description": "Officiële website van fotograaf Mark van Dis – bruiloft, loveshoot, portret en dierbare momenten.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
