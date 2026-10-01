@@ -1,15 +1,15 @@
 # Mark van Dis Trouwfotografie
 
-Deze map is direct geschikt voor GitHub Pages. Upload de volledige inhoud van
-deze map naar de hoofdmap van de repository; verplaats `index.html`, `mijnwerk/`
-of `images/` niet.
+Deze website is geschikt voor GitHub Pages als statische site. Houd de bestaande
+mapstructuur in de Mark van Dis-website repository intact; verplaats
+`index.html`, `mijnwerk/` of `images/` niet.
 
 ## Publiceren via GitHub Pages
 
-1. Maak een nieuwe GitHub-repository en upload alle bestanden uit deze map.
+1. Push wijzigingen naar de branch van de bestaande website repository.
 2. Open in GitHub **Settings → Pages**.
 3. Kies bij **Build and deployment** voor **Deploy from a branch**.
-4. Selecteer de branch `main` en de map `/(root)`, en sla op.
+4. Selecteer de branch waarop de website staat en de map `/(root)`, en sla op.
 5. Wacht tot GitHub de website-URL toont. Bij een projectrepository is die
    doorgaans `https://gebruikersnaam.github.io/repositorynaam/`.
 
