@@ -995,12 +995,8 @@ button {
 }
 
 .about-container {
-  max-width: 1320px;
+  max-width: 1160px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
-  gap: 5rem;
-  align-items: start;
 }
 
 .about-content {
@@ -1054,8 +1050,54 @@ button {
   font-weight: 600;
   line-height: 1.45;
   color: var(--text-main);
-  margin-bottom: 1.6rem;
+  max-width: 780px;
+  margin-bottom: 3rem;
   letter-spacing: 0.005em;
+}
+
+.about-stories {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.about-story {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.about-story--reverse .about-story__media {
+  order: 2;
+}
+
+.about-story__media {
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--quote-bg);
+  box-shadow: 0 18px 45px rgba(42, 39, 36, 0.1);
+  aspect-ratio: 4 / 3;
+}
+
+.about-story__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-story__title {
+  margin: 0 0 1rem;
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.about-story .about-text {
+  max-width: 480px;
+  margin-bottom: 0;
 }
 
 .about-text {
@@ -1110,68 +1152,6 @@ button {
   color: #8c6841;
 }
 
-/* Rechterkolom: Fotograaf Card met diepte-backdrop */
-.about-visual {
-  position: sticky;
-  top: 100px;
-  display: flex;
-  justify-content: center;
-}
-
-.about-photo-card {
-  width: 100%;
-  max-width: 440px;
-  position: relative;
-}
-
-/* Decoratief verschoven kader dat diepte creëert */
-.about-photo-card__backdrop {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  width: 100%;
-  height: 100%;
-  border: 1.5px solid #c9b4a1;
-  background: rgba(183, 160, 140, 0.14);
-  border-radius: 4px;
-  z-index: 1;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-}
-
-.about-photo-card__inner {
-  position: relative;
-  z-index: 2;
-  border-radius: 4px;
-  overflow: hidden;
-  background-color: var(--quote-bg);
-  box-shadow: 0 18px 45px rgba(42, 39, 36, 0.09);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
-}
-
-.about-photo-card:hover .about-photo-card__backdrop {
-  transform: translate(-6px, -6px);
-  border-color: #b7a08c;
-}
-
-.about-photo-card:hover .about-photo-card__inner {
-  transform: translate(-3px, -3px);
-  box-shadow: 0 28px 60px rgba(42, 39, 36, 0.15);
-}
-
-/* Exacte afmetingen en styling voor de placeholder foto */
-.about-photo {
-  width: 100%;
-  height: 580px;
-  object-fit: cover;
-  display: block;
-  border-radius: 4px;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.about-photo-card:hover .about-photo {
-  transform: scale(1.035);
-}
-
 .about-quote,
 .story-quote {
   font-family: var(--font-serif);
@@ -1180,43 +1160,6 @@ button {
   line-height: 1.45;
   color: var(--text-main);
   margin: 1.8rem 0 0;
-}
-
-.about-photo-badge {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  background: rgba(247, 244, 239, 0.94);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 0.7rem 1.25rem;
-  border-radius: 2px;
-  border: 1px solid rgba(230, 224, 215, 0.8);
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.about-photo-card:hover .about-photo-badge {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-}
-
-.about-photo-badge span {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--text-main);
-  line-height: 1.2;
-}
-
-.about-photo-badge small {
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
 }
 
 /* Animaties */
@@ -1233,14 +1176,7 @@ button {
 
 /* Responsiveness voor Even Voorstellen */
 @media (max-width: 1040px) {
-  .about-container {
-    gap: 3rem;
-    grid-template-columns: 1.1fr 0.9fr;
-  }
-  
-  .about-photo {
-    height: 480px;
-  }
+  .about-stories { gap: 2.75rem; }
 }
 
 @media (max-width: 860px) {
@@ -1248,18 +1184,13 @@ button {
     padding: 4rem 1.25rem 5rem;
   }
 
-  .about-container {
+  .about-story {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 1.5rem;
   }
 
-  .about-visual {
-    position: static;
-  }
-
-  .about-photo-card {
-    max-width: 100%;
-  }
+  .about-story--reverse .about-story__media { order: initial; }
+  .about-story__media { aspect-ratio: 16 / 10; }
 }
 
 /* ========================================================================== 
@@ -1924,6 +1855,16 @@ button {
   object-fit: cover;
   display: block;
   transition: transform 0.7s var(--transition-smooth);
+}
+
+.subpage-gallery-grid--awards .subpage-card__img {
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: #171615;
+}
+
+.subpage-gallery-grid--awards .subpage-card:hover .subpage-card__img {
+  transform: none;
 }
 
 .subpage-card:hover .subpage-card__img {
