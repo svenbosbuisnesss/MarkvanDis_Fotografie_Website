@@ -27,7 +27,7 @@ app.get('/contact', (req, res) => {
 
 // Algemene Voorwaarden pagina (conform screenshots)
 app.get('/algemene-voorwaarden', (req, res) => {
-  res.sendFile(path.join(__dirname, 'algemene-voorwaarden.html'));
+  res.redirect('/contact.html#termsModalBackdrop');
 });
 
 // Dedicated pages for portfolio categories
